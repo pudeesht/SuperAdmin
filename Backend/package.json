@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "start": "node src/app.js",
-  "test": "cross-env NODE_ENV=test prisma migrate reset --force && jest --runInBand"
-  },
+  "start": "node src/server.js",
+  "test": "dotenv -e .env.test -- cross-env NODE_ENV=test prisma migrate reset --force && jest --runInBand"
+},
   "prisma": {
     "seed": "node prisma/seed.js"
   },
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "cross-env": "^10.0.0",
+    "dotenv-cli": "^10.0.0",
     "jest": "^30.1.1",
     "prisma": "^6.15.0",
     "supertest": "^7.1.4"
