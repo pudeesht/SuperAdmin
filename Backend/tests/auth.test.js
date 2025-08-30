@@ -34,11 +34,13 @@ describe('Auth Routes API', () => {
     });
   });
 
+  
   afterAll(async () => {
-    await prisma.user.delete({ where: { id: testUser.id } });
+    // Clean up all created test data
+    await prisma.user.deleteMany({});
+    await prisma.role.deleteMany({});
     await prisma.$disconnect();
   });
-
 
   it('should log in a user with correct credentials and return a token', async () => {
     const response = await request(app)
