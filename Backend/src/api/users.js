@@ -1,6 +1,8 @@
 const express = require('express');
 const { PrismaClient } = require('@prisma/client');
 const { authenticateToken, requireSuperadmin } = require('../middleware/authMiddleware');
+const userController=require('../controllers/userControllers');
+
 
 const prisma = new PrismaClient();
 const router = express.Router();
@@ -8,19 +10,13 @@ const router = express.Router();
 router.use(authenticateToken);
 router.use(requireSuperadmin);
 
-router.get('/', async (req, res) => {
 
-  try {
-    const users = await prisma.user.findMany({
-      include: {
-        roles: true,
-      },
-    });
-    users.forEach(user => delete user.hashedPassword); 
-    res.json(users);
-  } catch (error) {
-    res.status(500).json({ message: 'Failed to retrieve users.' });
-  }
-});
+router.get('/', userController.listUsers);
+router.get('/:id', userController.getUserById);
+router.post('/', userController.createUser);
+router.put('/:id', userController.updateUser);
+router.delete('/:id', userController.deleteUser);
+
+
 
 module.exports = router;

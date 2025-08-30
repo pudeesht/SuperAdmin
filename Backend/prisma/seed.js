@@ -23,6 +23,16 @@ async function main() {
     },
   });
 
+  const userRole = await prisma.role.upsert({
+      where: { name: 'user' },
+      update: {},
+      create: {
+        name: 'user',
+        permissions: [],
+      },
+    });
+
+
   const superadminUser = await prisma.user.upsert({
     where: { email: 'superadmin@example.com' },
     update: {},
@@ -38,6 +48,7 @@ async function main() {
 
   console.log('Seeding finished.');
   console.log(`Created role: ${superadminRole.name}`);
+  console.log(`Created role: ${userRole.name}`);
   console.log(`Created user: ${superadminUser.email}`);
 }
 
