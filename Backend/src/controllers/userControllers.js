@@ -2,18 +2,11 @@ const bcrypt = require("bcryptjs");
 const { logAction } = require("../services/auditLogService");
 const AppError = require("../utils/appError"); 
 
-// const { PrismaClient } = require("@prisma/client");
-// const prisma = new PrismaClient();
 
 
 const prisma = require('../prismaClient');
 
-const catchAsync = (fn) => {
-  return (req, res, next) => {
-    fn(req, res, next).catch(next);
-  };
-};
-
+const catchAsync=require('../utils/catchAsync');
 
 
 exports.listUsers = catchAsync(async (req, res, next) => {

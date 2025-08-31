@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const authRoutes = require('./api/auth');
 const userRoutes = require('./api/users');
+const roleRoutes = require('./api/roles.js');
 const errorHandler = require('./middleware/errorHandler');
 const AppError=require('./utils/appError.js')
 
@@ -14,6 +15,7 @@ const app=express();
 app.use(express.json());
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/superadmin/users',userRoutes);
+app.use('/api/v1/superadmin', roleRoutes); 
 
 
 app.get('/',(req,res)=>{
@@ -29,3 +31,5 @@ app.get('/',(req,res)=>{
 app.use(errorHandler);
 
 module.exports=app;
+
+
