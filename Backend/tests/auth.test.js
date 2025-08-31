@@ -1,13 +1,15 @@
 
 
 const request = require('supertest');
-const { PrismaClient } = require('@prisma/client');
 const bcrypt = require('bcryptjs');
 
 
 const app = require('../src/app'); 
 
-const prisma = new PrismaClient();
+// const { PrismaClient } = require('@prisma/client');
+// const prisma = new PrismaClient();
+
+const prisma = require('../src/prismaClient');
 
 describe('Auth Routes API', () => {
 

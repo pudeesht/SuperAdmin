@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
+ "scripts": {
   "start": "node src/server.js",
-  "test": "dotenv -e .env.test -- cross-env NODE_ENV=test prisma migrate reset --force && jest --runInBand"
+  "test": "dotenv -e .env.test -- cross-env NODE_ENV=test prisma migrate reset --force --skip-seed && jest --runInBand"
 },
   "prisma": {
     "seed": "node prisma/seed.js"

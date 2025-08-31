@@ -1,10 +1,14 @@
 const express = require('express');
-const { PrismaClient } = require('@prisma/client');
 const { authenticateToken, requireSuperadmin } = require('../middleware/authMiddleware');
 const userController=require('../controllers/userControllers');
 
 
-const prisma = new PrismaClient();
+// const { PrismaClient } = require('@prisma/client');
+// const prisma = new PrismaClient();
+
+
+const prisma = require('../prismaClient');
+
 const router = express.Router();
 
 router.use(authenticateToken);
