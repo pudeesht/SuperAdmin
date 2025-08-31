@@ -86,7 +86,7 @@ exports.createUser = catchAsync(async (req, res, next) => {
   });
 
   delete newUser.hashedPassword;
-  res.status(201).json({message:"User created sucessfully",data:newUser});
+  res.status(201).json({message:"User created sucessfully",data:newUser, tempid:req.user.userId});
 });
 
 
@@ -124,10 +124,10 @@ exports.deleteUser = catchAsync(async (req, res, next) => {
     return next(new AppError(404, "User not found"));
   }
 
-  await prisma.user.delete({ where: { id: targetId } });
   await logAction(actorUserId, "DELETE_USER", "USER", targetId, {
     email: userToDelete.email,
   });
+  await prisma.user.delete({ where: { id: targetId } });
 
   res.status(204).send();
 });
