@@ -12,7 +12,7 @@ const authenticateToken = (req, res, next) => {
     if (err) {
       return res.status(403).json({ message: 'Token is not valid.' });
     }
-    console.log("yeh hai middleware",userPayload);
+    // console.log("yeh hai middleware",userPayload);
     req.user = userPayload;
     next();
   });
