@@ -129,5 +129,5 @@ exports.deleteUser = catchAsync(async (req, res, next) => {
   });
   await prisma.user.delete({ where: { id: targetId } });
 
-  res.status(204).send();
+  res.status(204).send("User Deleted");
 });

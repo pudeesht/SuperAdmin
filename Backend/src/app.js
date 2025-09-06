@@ -9,11 +9,13 @@ const auditLogRoutes=require('./api/auditLog.js');
 const analyticsRoutes = require('./api/analytics'); 
 const errorHandler = require('./middleware/errorHandler');
 const AppError=require('./utils/appError.js')
+const cors=require('cors');
+
 
 const app=express();
 
 
-
+app.use(cors());
 app.use(express.json());
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/superadmin/users',userRoutes);
