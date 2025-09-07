@@ -72,7 +72,30 @@ export const getUsers = async ( )=>{
 
 
 
+export const getAuditLogs = async ( )=>{
+  try{
+    const response=await  apiClient.get('/superadmin/audit-logs');
+    return response.data;
+  }
+  catch(error){
+    throw new Error(error.respone?.data?.message || "Failed to get analytics");
+  }
+
+}
 
 
+
+
+
+export const getAnalytics = async()=>{
+  try{
+    const response=await  apiClient.get('/superadmin/analytics/summary');
+    return response.data;
+  }
+  catch(error)
+  {
+    throw new Error(error.response?.data?.message || "Failed to get analytics");
+  }
+}
 
 
