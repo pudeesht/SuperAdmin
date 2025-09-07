@@ -1,0 +1,991 @@
+{
+	"info": {
+		"_postman_id": "493e9633-a266-4924-a601-b005a12d92de",
+		"name": "SuperAdmin API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48187134",
+		"_collection_link": "https://pudeesht-151801.postman.co/workspace/Vaibhav-Sharma's-Workspace~896bcce7-a9fc-4756-8a84-c0e1cfdd71d7/collection/48187134-493e9633-a266-4924-a601-b005a12d92de?action=share&source=collection_link&creator=48187134"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"superadmin@example.com\",\r\n    \"password\": \"Test1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/auth/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "List Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbWV6d2R6ZmwwMDAyb2VvazN2bmQwdmZvIiwicm9sZXMiOlsic3VwZXJhZG1pbiJdLCJpYXQiOjE3NTcxMDk5OTAsImV4cCI6MTc1NzE5NjM5MH0.bPNwDewFUprWlE6vHZJTbT8ZC7pgdjeLM_-aG8g7EQY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/superadmin/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"superadmin",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/v1/superadmin/users",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"superadmin",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2501"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9c5-OIE9kRsy41F59PJA7a7eCGitOQ0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Sep 2025 22:14:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": \"cmf01lal80000oer0bz1g8z1k\",\n            \"email\": \"testuser10@e.com\",\n            \"name\": \"test user 10\",\n            \"createdAt\": \"2025-08-31T18:46:58.269Z\",\n            \"updatedAt\": \"2025-08-31T18:46:58.269Z\",\n            \"lastLogin\": null,\n            \"roles\": [\n                {\n                    \"id\": \"cmezwdzfb0001oeokrjlz463t\",\n                    \"name\": \"user\",\n                    \"permissions\": []\n                }\n            ]\n        },\n        {\n            \"id\": \"cmf01c4qy0000oemcwl4mh7wd\",\n            \"email\": \"testuser7@e.com\",\n            \"name\": \"test user 7\",\n            \"createdAt\": \"2025-08-31T18:39:50.795Z\",\n            \"updatedAt\": \"2025-08-31T18:39:50.795Z\",\n            \"lastLogin\": null,\n            \"roles\": [\n                {\n                    \"id\": \"cmezwdzfb0001oeokrjlz463t\",\n                    \"name\": \"user\",\n                    \"permissions\": []\n                }\n            ]\n        },\n        {\n            \"id\": \"cmf01bc3t0006oe98olyfk4ml\",\n            \"email\": \"testuser6@e.com\",\n            \"name\": \"test user 5\",\n            \"createdAt\": \"2025-08-31T18:39:13.673Z\",\n            \"updatedAt\": \"2025-08-31T18:39:13.673Z\",\n            \"lastLogin\": null,\n            \"roles\": [\n                {\n                    \"id\": \"cmezwdzfb0001oeokrjlz463t\",\n                    \"name\": \"user\",\n                    \"permissions\": []\n                }\n            ]\n        },\n        {\n            \"id\": \"cmf018pt30003oe9864t6qknh\",\n            \"email\": \"testuser5@e.com\",\n            \"name\": \"test user 5\",\n            \"createdAt\": \"2025-08-31T18:37:11.463Z\",\n            \"updatedAt\": \"2025-08-31T18:37:11.463Z\",\n            \"lastLogin\": null,\n            \"roles\": [\n                {\n                    \"id\": \"cmezwdzfb0001oeokrjlz463t\",\n                    \"name\": \"user\",\n                    \"permissions\": []\n                }\n            ]\n        },\n        {\n            \"id\": \"cmf00bav20000oe98hu1kwe2r\",\n            \"email\": \"testuser4@e.com\",\n            \"name\": \"test user 4\",\n            \"createdAt\": \"2025-08-31T18:11:12.446Z\",\n            \"updatedAt\": \"2025-08-31T18:11:12.446Z\",\n            \"lastLogin\": null,\n            \"roles\": [\n                {\n                    \"id\": \"cmezwdzfb0001oeokrjlz463t\",\n                    \"name\": \"user\",\n                    \"permissions\": []\n                }\n            ]\n        },\n        {\n            \"id\": \"cmf00078w0000oeowffya7oas\",\n            \"email\": \"testuser2@e.com\",\n            \"name\": \"test user 2\",\n            \"createdAt\": \"2025-08-31T18:02:34.544Z\",\n            \"updatedAt\": \"2025-08-31T18:02:34.544Z\",\n            \"lastLogin\": null,\n            \"roles\": [\n                {\n                    \"id\": \"cmezwdzfb0001oeokrjlz463t\",\n                    \"name\": \"user\",\n                    \"permissions\": []\n                }\n            ]\n        },\n        {\n            \"id\": \"cmezzrcmf0000oeucjkklaq2x\",\n            \"email\": \"testuser3@e.com\",\n            \"name\": \"test user 3\",\n            \"createdAt\": \"2025-08-31T17:55:41.608Z\",\n            \"updatedAt\": \"2025-08-31T17:55:41.608Z\",\n            \"lastLogin\": null,\n            \"roles\": [\n                {\n                    \"id\": \"cmezwdzfb0001oeokrjlz463t\",\n                    \"name\": \"user\",\n                    \"permissions\": []\n                }\n            ]\n        },\n        {\n            \"id\": \"cmezwg0br0000oe3whuv8ylsd\",\n            \"email\": \"testuser1@e.com\",\n            \"name\": null,\n            \"createdAt\": \"2025-08-31T16:22:53.607Z\",\n            \"updatedAt\": \"2025-08-31T16:22:53.607Z\",\n            \"lastLogin\": null,\n            \"roles\": [\n                {\n                    \"id\": \"cmezwdzfb0001oeokrjlz463t\",\n                    \"name\": \"user\",\n                    \"permissions\": []\n                },\n                {\n                    \"id\": \"cmezxhr9k0000oe4g7zev2xka\",\n                    \"name\": \"Editor\",\n                    \"permissions\": [\n                        \"edit\",\n                        \"upload\"\n                    ]\n                }\n            ]\n        },\n        {\n            \"id\": \"cmezwdzfl0002oeok3vnd0vfo\",\n            \"email\": \"superadmin@example.com\",\n            \"name\": \"Super Admin\",\n            \"createdAt\": \"2025-08-31T16:21:19.137Z\",\n            \"updatedAt\": \"2025-09-05T22:06:30.148Z\",\n            \"lastLogin\": \"2025-09-05T22:06:30.146Z\",\n            \"roles\": [\n                {\n                    \"id\": \"cmezwdzes0000oeokwv6ifm76\",\n                    \"name\": \"superadmin\",\n                    \"permissions\": [\n                        \"users:create\",\n                        \"users:read\",\n                        \"users:update\",\n                        \"users:delete\",\n                        \"roles:assign\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"totalPages\": 1,\n    \"currentPage\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbWV6d2R6ZmwwMDAyb2VvazN2bmQwdmZvIiwicm9sZXMiOlsic3VwZXJhZG1pbiJdLCJpYXQiOjE3NTcxMDk5OTAsImV4cCI6MTc1NzE5NjM5MH0.bPNwDewFUprWlE6vHZJTbT8ZC7pgdjeLM_-aG8g7EQY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"testuser12@e.com\",\r\n    \"password\": \"123\",\r\n    \"name\": \"Test User 12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/superadmin/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"superadmin",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"testuser12@e.com\",\r\n    \"password\": \"123\",\r\n    \"name\": \"Test User 12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/v1/superadmin/users",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"superadmin",
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "337"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"151-tMDhOD5OEZQH9QKkbNubmgHXdxg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Sep 2025 22:16:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User created sucessfully\",\n    \"data\": {\n        \"id\": \"cmf7e9xom0007oedct617p74f\",\n        \"email\": \"testuser12@e.com\",\n        \"name\": \"Test User 12\",\n        \"createdAt\": \"2025-09-05T22:16:26.567Z\",\n        \"updatedAt\": \"2025-09-05T22:16:26.567Z\",\n        \"lastLogin\": null,\n        \"roles\": [\n            {\n                \"id\": \"cmezwdzfb0001oeokrjlz463t\",\n                \"name\": \"user\",\n                \"permissions\": []\n            }\n        ]\n    },\n    \"tempid\": \"cmezwdzfl0002oeok3vnd0vfo\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbWV6d2R6ZmwwMDAyb2VvazN2bmQwdmZvIiwicm9sZXMiOlsic3VwZXJhZG1pbiJdLCJpYXQiOjE3NTcwMjM0MDEsImV4cCI6MTc1NzEwOTgwMX0.wxBEPfjoQugq6U9cJpML8nomK6ugzlFO4DeUvKR9q44",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"testuser11@e.com\",\r\n    \"password\": \"123\",\r\n    \"name\": \"Test User 11\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/superadmin/users/cmf5yibt10000oee06hlarw9c",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"superadmin",
+								"users",
+								"cmf5yibt10000oee06hlarw9c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/v1/superadmin/users/cmf7e9xom0007oedct617p74f",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"superadmin",
+										"users",
+										"cmf7e9xom0007oedct617p74f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "254"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fe-sSD3mjov+Rg4OZf8Dk/RPggdglk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Sep 2025 22:17:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"cmf7e9xom0007oedct617p74f\",\n    \"email\": \"testuser12@e.com\",\n    \"name\": \"Test User 12\",\n    \"createdAt\": \"2025-09-05T22:16:26.567Z\",\n    \"updatedAt\": \"2025-09-05T22:16:26.567Z\",\n    \"lastLogin\": null,\n    \"roles\": [\n        {\n            \"id\": \"cmezwdzfb0001oeokrjlz463t\",\n            \"name\": \"user\",\n            \"permissions\": []\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbWV6d2R6ZmwwMDAyb2VvazN2bmQwdmZvIiwicm9sZXMiOlsic3VwZXJhZG1pbiJdLCJpYXQiOjE3NTcxMDk5OTAsImV4cCI6MTc1NzE5NjM5MH0.bPNwDewFUprWlE6vHZJTbT8ZC7pgdjeLM_-aG8g7EQY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Updated User Name \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/superadmin/users/cmf5yibt10000oee06hlarw9c",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"superadmin",
+								"users",
+								"cmf5yibt10000oee06hlarw9c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update User",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Updated User Name \"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/v1/superadmin/users/cmf7e9xom0007oedct617p74f",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"superadmin",
+										"users",
+										"cmf7e9xom0007oedct617p74f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "184"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b8-Sa9rDqhbPpNl9JuuKusSgpnY0hk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Sep 2025 22:18:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"cmf7e9xom0007oedct617p74f\",\n    \"email\": \"testuser12@e.com\",\n    \"name\": \"Updated User Name \",\n    \"createdAt\": \"2025-09-05T22:16:26.567Z\",\n    \"updatedAt\": \"2025-09-05T22:18:28.739Z\",\n    \"lastLogin\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/v1/superadmin/users/cmf7e9xom0007oedct617p74f",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"superadmin",
+										"users",
+										"cmf7e9xom0007oedct617p74f"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Sep 2025 22:19:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Get Roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbWV6d2R6ZmwwMDAyb2VvazN2bmQwdmZvIiwicm9sZXMiOlsic3VwZXJhZG1pbiJdLCJpYXQiOjE3NTcxMDk5OTAsImV4cCI6MTc1NzE5NjM5MH0.bPNwDewFUprWlE6vHZJTbT8ZC7pgdjeLM_-aG8g7EQY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/superadmin/roles",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"superadmin",
+								"roles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/v1/superadmin/roles",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"superadmin",
+										"roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "303"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12f-D2/fdq4uvPEr2/XZCF14CrJzHNk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Sep 2025 22:21:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": \"cmezwdzes0000oeokwv6ifm76\",\n            \"name\": \"superadmin\",\n            \"permissions\": [\n                \"users:create\",\n                \"users:read\",\n                \"users:update\",\n                \"users:delete\",\n                \"roles:assign\"\n            ]\n        },\n        {\n            \"id\": \"cmezwdzfb0001oeokrjlz463t\",\n            \"name\": \"user\",\n            \"permissions\": []\n        },\n        {\n            \"id\": \"cmezxhr9k0000oe4g7zev2xka\",\n            \"name\": \"Editor\",\n            \"permissions\": [\n                \"edit\",\n                \"upload\"\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Role",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"CameraMan\",\r\n    \"permissions\" : [ \"record \", \"create\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/v1/superadmin/roles",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"superadmin",
+										"roles"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "97"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"61-+LaERhFRPbDkYHrdWleDOPJzYvI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Sep 2025 22:25:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"cmf7el0wm000eoedcfw2pxnt3\",\n        \"name\": \"CameraMan\",\n        \"permissions\": [\n            \"record \",\n            \"create\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"permissions\" : [\"record\", \"create\", \"script\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/v1/superadmin/roles/cmf7el0wm000eoedcfw2pxnt3",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"superadmin",
+										"roles",
+										"cmf7el0wm000eoedcfw2pxnt3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "105"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"69-Vl9vqk/1DYVR22yqdQse+I/bpKI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Sep 2025 22:28:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"cmf7el0wm000eoedcfw2pxnt3\",\n        \"name\": \"CameraMan\",\n        \"permissions\": [\n            \"record\",\n            \"create\",\n            \"script\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Assign Role",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\":\"cmf018pt30003oe9864t6qknh\" ,\r\n    \"roleId\":\"cmezxhr9k0000oe4g7zev2xka\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/v1/superadmin/assign-role",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"superadmin",
+										"assign-role"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-sSqCOpVG6sK5XnD7MZ49UbkS238\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Sep 2025 22:31:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Role assigned successfully.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Analytics Summary",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbWV6d2R6ZmwwMDAyb2VvazN2bmQwdmZvIiwicm9sZXMiOlsic3VwZXJhZG1pbiJdLCJpYXQiOjE3NTcxMDk5OTAsImV4cCI6MTc1NzE5NjM5MH0.bPNwDewFUprWlE6vHZJTbT8ZC7pgdjeLM_-aG8g7EQY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/v1/superadmin/analytics/summary",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"superadmin",
+						"analytics",
+						"summary"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/superadmin/analytics/summary",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"superadmin",
+								"analytics",
+								"summary"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"42-GyRKd/mq93EEaqHOYUV6uVMSJSo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 05 Sep 2025 22:34:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"totalUsers\": 10,\n        \"totalRoles\": 4,\n        \"activeUsersLast7Days\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Audit Logs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbWV6d2R6ZmwwMDAyb2VvazN2bmQwdmZvIiwicm9sZXMiOlsic3VwZXJhZG1pbiJdLCJpYXQiOjE3NTcxMDk5OTAsImV4cCI6MTc1NzE5NjM5MH0.bPNwDewFUprWlE6vHZJTbT8ZC7pgdjeLM_-aG8g7EQY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/v1/superadmin/audit-logs?userId=cmezwdzfl0002oeok3vnd0vfo",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"superadmin",
+						"audit-logs"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "cmezwdzfl0002oeok3vnd0vfo"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/superadmin/audit-logs?userId=cmezwdzfl0002oeok3vnd0vfo",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"superadmin",
+								"audit-logs"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "cmezwdzfl0002oeok3vnd0vfo"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3446"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d76-aVYtMmntK/ozdMLs1Xe56OnehgQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 05 Sep 2025 22:38:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": \"cmf7etmj3000moedcg3wg6ku6\",\n            \"action\": \"ASSIGN_ROLE\",\n            \"details\": {\n                \"roleId\": \"cmezxhr9k0000oe4g7zev2xka\"\n            },\n            \"targetType\": \"USER\",\n            \"targetId\": \"cmf018pt30003oe9864t6qknh\",\n            \"timestamp\": \"2025-09-05T22:31:45.232Z\",\n            \"actorUserId\": \"cmezwdzfl0002oeok3vnd0vfo\",\n            \"actor\": {\n                \"id\": \"cmezwdzfl0002oeok3vnd0vfo\",\n                \"name\": \"Super Admin\",\n                \"email\": \"superadmin@example.com\"\n            }\n        },\n        {\n            \"id\": \"cmf7epjml000koedcatgej7qi\",\n            \"action\": \"UPDATE_ROLE\",\n            \"details\": {\n                \"permissions\": [\n                    \"record\",\n                    \"create\",\n                    \"script\"\n                ]\n            },\n            \"targetType\": \"ROLE\",\n            \"targetId\": \"cmf7el0wm000eoedcfw2pxnt3\",\n            \"timestamp\": \"2025-09-05T22:28:34.846Z\",\n            \"actorUserId\": \"cmezwdzfl0002oeok3vnd0vfo\",\n            \"actor\": {\n                \"id\": \"cmezwdzfl0002oeok3vnd0vfo\",\n                \"name\": \"Super Admin\",\n                \"email\": \"superadmin@example.com\"\n            }\n        },\n        {\n            \"id\": \"cmf7eozkq000ioedc81byuvuu\",\n            \"action\": \"UPDATE_ROLE\",\n            \"details\": {\n                \"permissions\": [\n                    \"scripting\"\n                ]\n            },\n            \"targetType\": \"ROLE\",\n            \"targetId\": \"cmf7el0wm000eoedcfw2pxnt3\",\n            \"timestamp\": \"2025-09-05T22:28:08.858Z\",\n            \"actorUserId\": \"cmezwdzfl0002oeok3vnd0vfo\",\n            \"actor\": {\n                \"id\": \"cmezwdzfl0002oeok3vnd0vfo\",\n                \"name\": \"Super Admin\",\n                \"email\": \"superadmin@example.com\"\n            }\n        },\n        {\n            \"id\": \"cmf7el0x1000goedcv9fbfve1\",\n            \"action\": \"CREATE_ROLE\",\n            \"details\": {\n                \"name\": \"CameraMan\"\n            },\n            \"targetType\": \"ROLE\",\n            \"targetId\": \"cmf7el0wm000eoedcfw2pxnt3\",\n            \"timestamp\": \"2025-09-05T22:25:03.974Z\",\n            \"actorUserId\": \"cmezwdzfl0002oeok3vnd0vfo\",\n            \"actor\": {\n                \"id\": \"cmezwdzfl0002oeok3vnd0vfo\",\n                \"name\": \"Super Admin\",\n                \"email\": \"superadmin@example.com\"\n            }\n        },\n        {\n            \"id\": \"cmf7ee4f2000doedcjy38mgrt\",\n            \"action\": \"DELETE_USER\",\n            \"details\": {\n                \"email\": \"testuser12@e.com\"\n            },\n            \"targetType\": \"USER\",\n            \"targetId\": \"cmf7e9xom0007oedct617p74f\",\n            \"timestamp\": \"2025-09-05T22:19:41.918Z\",\n            \"actorUserId\": \"cmezwdzfl0002oeok3vnd0vfo\",\n            \"actor\": {\n                \"id\": \"cmezwdzfl0002oeok3vnd0vfo\",\n                \"name\": \"Super Admin\",\n                \"email\": \"superadmin@example.com\"\n            }\n        },\n        {\n            \"id\": \"cmf7ecjyq000boedch2jekxvo\",\n            \"action\": \"UPDATE_USER\",\n            \"details\": {\n                \"name\": \"Updated User Name \"\n            },\n            \"targetType\": \"USER\",\n            \"targetId\": \"cmf7e9xom0007oedct617p74f\",\n            \"timestamp\": \"2025-09-05T22:18:28.754Z\",\n            \"actorUserId\": \"cmezwdzfl0002oeok3vnd0vfo\",\n            \"actor\": {\n                \"id\": \"cmezwdzfl0002oeok3vnd0vfo\",\n                \"name\": \"Super Admin\",\n                \"email\": \"superadmin@example.com\"\n            }\n        },\n        {\n            \"id\": \"cmf7e9xox0009oedchkapsp82\",\n            \"action\": \"CREATE_USER\",\n            \"details\": {\n                \"name\": \"Test User 12\",\n                \"email\": \"testuser12@e.com\"\n            },\n            \"targetType\": \"USER\",\n            \"targetId\": \"cmf7e9xom0007oedct617p74f\",\n            \"timestamp\": \"2025-09-05T22:16:26.577Z\",\n            \"actorUserId\": \"cmezwdzfl0002oeok3vnd0vfo\",\n            \"actor\": {\n                \"id\": \"cmezwdzfl0002oeok3vnd0vfo\",\n                \"name\": \"Super Admin\",\n                \"email\": \"superadmin@example.com\"\n            }\n        },\n        {\n            \"id\": \"cmf7e7g170006oedcpsafqmu1\",\n            \"action\": \"CREATE_USER\",\n            \"details\": {\n                \"name\": \"Test User 11\",\n                \"email\": \"testuser11@e.com\"\n            },\n            \"targetType\": \"USER\",\n            \"targetId\": \"cmf7e7g0o0004oedc4zdp1jbs\",\n            \"timestamp\": \"2025-09-05T22:14:30.380Z\",\n            \"actorUserId\": \"cmezwdzfl0002oeok3vnd0vfo\",\n            \"actor\": {\n                \"id\": \"cmezwdzfl0002oeok3vnd0vfo\",\n                \"name\": \"Super Admin\",\n                \"email\": \"superadmin@example.com\"\n            }\n        },\n        {\n            \"id\": \"cmf7e3opc0003oedc4wu93d4z\",\n            \"action\": \"DELETE_USER\",\n            \"details\": {\n                \"email\": \"testuser11@e.com\"\n            },\n            \"targetType\": \"USER\",\n            \"targetId\": \"cmf5yibt10000oee06hlarw9c\",\n            \"timestamp\": \"2025-09-05T22:11:34.992Z\",\n            \"actorUserId\": \"cmezwdzfl0002oeok3vnd0vfo\",\n            \"actor\": {\n                \"id\": \"cmezwdzfl0002oeok3vnd0vfo\",\n                \"name\": \"Super Admin\",\n                \"email\": \"superadmin@example.com\"\n            }\n        },\n        {\n            \"id\": \"cmf7dxkxh0001oedcnhf1x2yq\",\n            \"action\": \"UPDATE_USER\",\n            \"details\": {\n                \"name\": \"Updated User Name \"\n            },\n            \"targetType\": \"USER\",\n            \"targetId\": \"cmf5yibt10000oee06hlarw9c\",\n            \"timestamp\": \"2025-09-05T22:06:50.164Z\",\n            \"actorUserId\": \"cmezwdzfl0002oeok3vnd0vfo\",\n            \"actor\": {\n                \"id\": \"cmezwdzfl0002oeok3vnd0vfo\",\n                \"name\": \"Super Admin\",\n                \"email\": \"superadmin@example.com\"\n            }\n        }\n    ],\n    \"totalPages\": 2,\n    \"currentPage\": 1\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
