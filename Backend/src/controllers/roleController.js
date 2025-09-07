@@ -57,5 +57,5 @@ exports.assignRoleToUser = catchAsync(async (req, res, next) => {
   });
 
   await logAction(req.user.userId, 'ASSIGN_ROLE', 'USER', userId, { roleId });
-  res.status(200).json({ message: 'Role assigned successfully.' });
+  res.status(200).json({ message: 'Role assigned successfully.'});
 });

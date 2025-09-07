@@ -1,5 +1,3 @@
-// backend/tests/roles.test.js
-
 const request = require('supertest');
 const app = require('../src/app');
 const prisma = require('../src/prismaClient');
@@ -9,13 +7,10 @@ describe('Role & Permissions API', () => {
   let testUser;
   let createdRole;
 
-  // Setup: Create a superadmin user and log them in
   beforeAll(async () => {
-    // Create necessary roles for user creation
     await prisma.role.upsert({ where: { name: 'superadmin' }, update: {}, create: { name: 'superadmin' } });
     await prisma.role.upsert({ where: { name: 'user' }, update: {}, create: { name: 'user' } });
     
-    // Create a user to assign roles to
     testUser = await prisma.user.create({
       data: {
         email: 'roletestuser@example.com',
@@ -25,7 +20,6 @@ describe('Role & Permissions API', () => {
       }
     });
 
-    // Create a superadmin to perform the actions
     await prisma.user.create({
       data: {
         email: 'roleadmin@example.com',
@@ -35,7 +29,6 @@ describe('Role & Permissions API', () => {
       },
     });
 
-    // Log in as superadmin to get the token
     const loginRes = await request(app)
       .post('/api/v1/auth/login')
       .send({ email: 'roleadmin@example.com', password: 'adminpassword' });
@@ -43,12 +36,10 @@ describe('Role & Permissions API', () => {
     superadminToken = loginRes.body.token;
   });
 
-  // Teardown: Clean the database
   afterAll(async () => {
     await prisma.auditLog.deleteMany({});
     await prisma.user.deleteMany({});
     await prisma.role.deleteMany({});
-    // No need to disconnect, the test runner will handle it
   });
 
   it('should create a new role successfully', async () => {
@@ -64,7 +55,7 @@ describe('Role & Permissions API', () => {
     expect(response.body.data.name).toBe('editor');
     expect(response.body.data.permissions).toEqual(['posts:create', 'posts:edit']);
 
-    createdRole = response.body.data; // Save for later tests
+    createdRole = response.body.data; 
   });
   
   it('should get a list of all roles', async () => {

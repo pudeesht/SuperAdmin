@@ -1,9 +1,13 @@
 
 import React, { useState } from 'react';
-import { login } from '../services/api';
+import * as api from '../services/api';
+import { useAuth } from '../context/useAuth';
 
 function LoginPage() {
   
+  //useauth ka login just sets the local token variable in JWT and sets the authentication sa true
+  //useauth ke login se JWT token set hojayega jo ki globally thru context le sakte ho aap
+  const {login}= useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -15,19 +19,16 @@ function LoginPage() {
     setIsLoading(true);
 
     try {
-      const token = await login(email, password);
+      const token = await api.login(email, password);
       
-      // --- IMPORTANT ---
-      // Per the project spec, we are storing the token in memory for this
-      // minimal UI. A real app would use secure storage like HttpOnly cookies.
+      //isse karne se context mei token store hojaata hai
+      login(token);
       
       alert('Login Successful! Check the console for your token.');
       console.log('Your JWT Token:', token);
-      
-      // Here you would typically store the token and redirect the user
-      // For now, we'll just log it.
-
+    
     } catch (err) {
+
       setError(err.message);
     } finally {
       setIsLoading(false);
